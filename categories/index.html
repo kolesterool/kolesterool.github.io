@@ -133,12 +133,12 @@
     </main>
     
 <footer class="footer">
-        <span><a href="https://kolesterool.prelive.rbrt.ee/">Kolesterool.info</a></span> · 
+    <span><a href="https://kolesterool.prelive.rbrt.ee/">Kolesterool.info</a></span> · 
 
     <a href="/kasutustingimused">Kasutustingimused</a> · 
     <a href="/privaatsuspoliitika">Privaatsuspoliitika</a>
 
-    <div> 
+    <div>
         See veebileht on mõeldud Eesti inimestele.<br>
         &copy; 2024 SIA Novartis Baltics
     </div>
@@ -148,6 +148,27 @@
         <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </div>
 </footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+
+<script>
+    $('a').each(function () {
+        var a = new RegExp('/' + window.location.host + '/');
+        if (!a.test(this.href)) {
+            $(this).attr("target", "_blank");
+            $(this).attr("onclick", "checker()");
+        }
+    });
+
+    function checker() {
+
+        let message = "Olete lahkumas veebilehelt www.kolesterool.info. Sellelt lingilt liigute edasi veebilehele, mille sisu eest Novartis ei vastuta."
+
+        let result = confirm(message);
+        if (!result) event.preventDefault();
+    }
+</script>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
@@ -207,19 +228,6 @@
         }
     })
 
-</script>
-
-<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
-    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-
-<script>
-    $('a').each(function () {
-        var a = new RegExp('/' + window.location.host + '/');
-        if (!a.test(this.href)) {
-            $(this).attr("target", "_blank");
-        }
-    });
-</script>
-</body>
+</script></body>
 
 </html>
