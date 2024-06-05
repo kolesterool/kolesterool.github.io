@@ -109,16 +109,6 @@
             </div>
         </div>
         <ul id="menu">
-            <li>
-                <a href="https://kolesterool.prelive.rbrt.ee/kolesterooli-ravimid/" title="Kolesterooli ravimid">
-                    <span>Kolesterooli ravimid</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://kolesterool.prelive.rbrt.ee/tervislik-toitumine/" title="Tervislik toitumine">
-                    <span>Tervislik toitumine</span>
-                </a>
-            </li>
         </ul>
     </nav>
 </header>
@@ -137,25 +127,27 @@
         &copy; 2024 SIA Novartis Baltics
     </div>
     <div>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+        <a href="https://www.novartis.com/ee-et/meist/kontakt">
+            <img src="https://www.novartis.com/themes/custom/polaris/logo.svg" width="100px" alt=""
+                style="margin: 2em auto;"></a>
     </div>
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
-integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
 <script>
     $('a').each(function () {
         var a = new RegExp('/' + window.location.host + '/');
         if (!a.test(this.href)) {
             $(this).attr("target", "_blank");
-            $(this).attr("onclick", "checker()");
+            $(this).click(e => {
+                externalLinkConfirmation();
+            });
         }
     });
 
-    function checker() {
+    function externalLinkConfirmation() {
 
         let message = "Olete lahkumas veebilehelt www.kolesterool.info. Sellelt lingilt liigute edasi veebilehele, mille sisu eest Novartis ei vastuta."
 
